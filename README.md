@@ -2,7 +2,7 @@
 
 The bot allows the user to view the shopping cart, view active orders, or even cancel one of the orders if necessary.
 
-##How to launch it?
+## How to launch it?
 1. The first step is to create a separate network in docker if there is no such network: "docker network create shared-network", it is needed to connect containers to each other for data exchange.
 2. Further we recommend using IntelliJ IDEA for this. All you have to do is clone any module from this repository via github clone in the IDE. You need to open in IDE git -> clone -> paste in URL the repository of modules that you want to connect to the system.
 3. Then go to the Maven compiler and select swagger-spring/Lifecycle and use "package", a "jar" file will be created.
