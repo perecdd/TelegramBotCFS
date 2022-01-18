@@ -69,6 +69,7 @@ public class Bot extends TelegramLongPollingBot {
 
             if(responseCode == 200){
                 DataBase.SetEmailAndPassword(chatid, email, password);
+                sendMsg(chatid, "You have successfully logged in.");
             }
             else{
                 sendMsg(chatid, "Can't connect with Cloud Food Store.");

@@ -1,0 +1,39 @@
+services:
+  telegram-bot:
+    container_name: telegram-bot
+    build:
+      context: . .
+      dockerfile: ./Dockerfile
+    ports:
+      - "1515:1515"
+    depends_on:
+      telegram-db:
+        condition: service_healthy
+    networks:
+      - postgres-compose-network
+      - shared-network
+    volumes:
+      - /volumes/telegram-bot
+
+  telegram-db:
+    networks:
+      - postgres-compose-network
+    image: postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: "telegram-db"
+      POSTGRES_USER: "telegram-db"
+      POSTGRES_PASSWORD: "telegram-db"
+    ports:
+      - "5434:5432"
+    healthcheck:
+      test: [ "CMD", "pg_isready", "-q", "-d", "telegram-db", "-U", "telegram-db" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+networks:
+  shared-network:
+    external: true
+  postgres-compose-network:
+    driver: bridge

@@ -10,7 +10,7 @@ import java.net.URL;
 
 public class CFS {
     public static final Integer port = 3939;
-    public static final String ip = "http://localhost"; // TODO: cfs
+    public static final String ip = "http://cfs";
     public static HttpURLConnection con;
 
     public static boolean tryLogin(String email, String password) {

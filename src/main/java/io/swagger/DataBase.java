@@ -54,11 +54,11 @@ public class DataBase {
             StringBuilder url = new StringBuilder();
             url.
                     append("jdbc:postgresql://").  //db type
-                    append("localhost:").          //host name // TODO: postrges or telegram by container name
+                    append("telegram-db:").          //host name // TODO: postrges or telegram by container name
                     append("5432/").               //port
-                    append("postgres?").             //db name
-                    append("user=postgres&").      //login
-                    append("password=postgres");     //password*/
+                    append("telegram-db?").             //db name
+                    append("user=telegram-db&").      //login
+                    append("password=telegram-db");     //password
 
             connection = DriverManager.getConnection(url.toString());
             statement = connection.createStatement();
