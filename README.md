@@ -1,6 +1,7 @@
 # Telegram Bot For Cloud Food Store
 
 The bot allows the user to view the shopping cart, view active orders, or even cancel one of the orders if necessary.
+Telegram bot ID - http://t.me/ohwetouhweth_bot
 
 ## How to launch it?
 1. The first step is to create a separate network in docker if there is no such network: "docker network create shared-network", it is needed to connect containers to each other for data exchange.
